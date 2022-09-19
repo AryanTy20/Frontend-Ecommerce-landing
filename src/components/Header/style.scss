@@ -254,9 +254,10 @@
         border: 0;
       }
       .cart-out {
-        z-index: 10;
-        left: -300%;
-        top: 190%;
+        position: fixed;
+        z-index: 5;
+        left: 3.5%;
+        top: 10%;
         width: 92vw;
       }
     }
