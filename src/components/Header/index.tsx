@@ -138,15 +138,16 @@ interface listProps {
 }
 
 const CartItem: React.FC<listProps> = ({ data, id }) => {
-  const Price: string = new Intl.NumberFormat("us", {
-    style: "currency",
-    currency: "USD",
-  }).format(data?.price);
-  const Total: string = new Intl.NumberFormat("us", {
-    style: "currency",
-    currency: "USD",
-  }).format(data?.price * data?.quantity);
+  // const Price: string = new Intl.NumberFormat("us", {
+  //   style: "currency",
+  //   currency: "USD",
+  // }).format(data?.price);
+  // const Total: string = new Intl.NumberFormat("us", {
+  //   style: "currency",
+  //   currency: "USD",
+  // }).format(data?.price * data?.quantity);
   const dispatch = useAppDispatch();
+  const Total = data?.price * data?.quantity;
 
   return (
     <>
@@ -157,8 +158,8 @@ const CartItem: React.FC<listProps> = ({ data, id }) => {
         <div className="meta">
           <p>{data?.title}</p>
           <p>
-            <span>{Price}</span>
-            <span> x {data?.quantity}</span> <b>{Total}</b>
+            <span>${data?.price} </span>
+            <span> x {data?.quantity} </span> <b>${Total}</b>
           </p>
         </div>
         <div className="remove" onClick={() => dispatch(remove(id))}>
