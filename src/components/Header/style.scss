@@ -1,0 +1,307 @@
+@use "../../colors" as *;
+
+.header {
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba($Grayishblue, 0.5);
+
+  .left {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .menu {
+      margin: 0 2em;
+      display: flex;
+      align-items: center;
+
+      a {
+        font-weight: 400;
+        cursor: pointer;
+        color: $Darkgrayishblue;
+        transition: color 0.3s;
+        margin-left: 1em;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -245%;
+          left: 0;
+          height: 0.25em;
+          width: 100%;
+          background-color: $Orange;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          color: $Veryvarkblue;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ham {
+      display: none;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .cart {
+      margin-right: 2em;
+      cursor: pointer;
+      position: relative;
+
+      svg {
+        margin-top: 0.1em;
+        fill: #69707d;
+        transition: fill 0.3s;
+      }
+      &:hover svg {
+        fill: $Veryvarkblue;
+      }
+
+      &::after {
+        position: absolute;
+        content: attr(data-value);
+        top: -0.5em;
+        left: 1em;
+        height: 1em;
+        width: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.6rem;
+        font-weight: 700;
+        border-radius: 0.8em;
+        padding: 0.2em 0;
+        background-color: $Orange;
+        visibility: hidden;
+      }
+
+      &[data-shownumber="true"]::after {
+        visibility: visible;
+      }
+    }
+
+    .profile {
+      height: 3em;
+      width: 3em;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      isolation: isolate;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        scale: 1.1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        background-color: $Orange;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .cart-out {
+      position: absolute;
+      top: 120%;
+      left: -200%;
+      width: 21em;
+      background-color: $White;
+      border-radius: 0.5em;
+      box-shadow: 0 15px 30px 0 rgba($Black, 0.25);
+
+      .title {
+        border-bottom: 1px solid rgba($Grayishblue, 0.5);
+        padding: 1.5em;
+        font-weight: 700;
+      }
+
+      .cart-items {
+        min-height: 12em;
+        height: fit-content;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: $Darkgrayishblue;
+          font-weight: 700;
+          font-size: 0.9rem;
+        }
+
+        .item {
+          margin: 0.5em 0;
+          display: flex;
+          align-items: center;
+
+          .thumbnail {
+            height: 3.5em;
+            width: 3.5em;
+            border-radius: 0.25em;
+            overflow: hidden;
+
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+
+          .meta {
+            color: $Darkgrayishblue;
+            padding: 0 0.5em;
+
+            p {
+              color: $Darkgrayishblue;
+              font-weight: 400;
+              margin: 0 0 0.5em 0;
+              b {
+                color: $Veryvarkblue;
+              }
+            }
+          }
+          .remove {
+            margin: 0 0.5em;
+            cursor: pointer;
+
+            svg {
+              transition: fill 0.3s;
+              fill: #69707d;
+            }
+
+            &:hover svg {
+              fill: $Veryvarkblue;
+            }
+          }
+        }
+
+        .checkout {
+          margin: 0.5em 0;
+          border: 0;
+          outline: 0;
+          padding: 1.2em 8em;
+          font-weight: 700;
+          background-color: $Orange;
+          color: $Paleorange;
+          border-radius: 0.5em;
+          cursor: pointer;
+          transition: outline 0.3s;
+
+          &:active {
+            outline: solid $Veryvarkblue 1px;
+          }
+
+          &:focus {
+            outline: solid $Veryvarkblue 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    width: 100%;
+    padding: 1em;
+
+    .ham {
+      display: block !important;
+      height: 1.2em;
+      width: 1.2em;
+      z-index: 10;
+      margin-right: 1em;
+      cursor: pointer;
+      svg {
+        margin-top: 0.15em;
+      }
+    }
+
+    .menu {
+      display: none !important;
+    }
+
+    .right {
+      .profile {
+        height: 2em;
+        width: 2em;
+        border: 0;
+      }
+      .cart-out {
+        z-index: 10;
+        left: -300%;
+        top: 190%;
+        width: 92vw;
+      }
+    }
+  }
+
+  .mobmenu {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -20%;
+      height: 100vh;
+      width: 70vw;
+      background-color: $White;
+      z-index: 5;
+    }
+
+    &::after {
+      position: fixed;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba($Black, 0.25);
+      z-index: 4;
+    }
+
+    .links {
+      margin: 4em 0 0 1em;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      a {
+        z-index: 6;
+        color: $Veryvarkblue;
+        font-weight: 700;
+        margin: 1em 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

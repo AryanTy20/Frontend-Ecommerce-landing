@@ -1,0 +1,121 @@
+@use "../../colors" as *;
+
+.pop-img {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(black, 0.7);
+  display: grid;
+  place-items: center;
+  z-index: 99;
+
+  .container {
+    height: fit-content;
+    position: relative;
+
+    .close {
+      position: absolute;
+      cursor: pointer;
+      top: 1%;
+      left: 96%;
+      svg path {
+        fill: $White;
+        transition: fill 0.3s;
+      }
+      &:hover svg path {
+        fill: $Orange;
+      }
+    }
+
+    .image {
+      margin: 3em 0;
+      position: relative;
+
+      @mixin controlIcon {
+        position: absolute;
+        top: 35%;
+        left: 95%;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        background-color: white;
+        display: grid;
+        place-items: center;
+        svg path {
+          transition: stroke 0.3s;
+        }
+        &:hover svg path {
+          stroke: $Orange;
+        }
+      }
+
+      .control-left {
+        @include controlIcon;
+        left: -1em;
+      }
+      .control-right {
+        @include controlIcon;
+      }
+
+      .poster {
+        height: 25em;
+        width: 25em;
+        border-radius: 0.5em;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .thumbnails {
+        width: 100%;
+        margin: 2em 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .box {
+          height: 5em;
+          width: 5em;
+          border-radius: 0.5em;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+          isolation: isolate;
+          z-index: 1;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+
+          &::after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($White, 0.3);
+            opacity: 0;
+            transition: all ease;
+          }
+
+          &:hover::after {
+            opacity: 1;
+          }
+        }
+
+        .active {
+          border: solid $Orange 2px;
+          z-index: 99;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
