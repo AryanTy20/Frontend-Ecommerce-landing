@@ -116,7 +116,7 @@ const Cart: React.FC = () => {
         className="cart-out"
       >
         <div className="title">Cart</div>
-        <div className="cart-items">
+        <div className={`cart-items ${data?.length < 1 ? "empty-cart" : ""}`}>
           {data?.length < 1 && <p>Your cart is empty</p>}
           {data?.length > 0 &&
             data?.map((item, i) => <CartItem data={item} id={i} key={i} />)}
