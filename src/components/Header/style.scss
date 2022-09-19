@@ -131,7 +131,7 @@
     .cart-out {
       position: absolute;
       top: 120%;
-      left: -200%;
+      right: 0;
       width: 21em;
       background-color: $White;
       border-radius: 0.5em;
@@ -247,18 +247,20 @@
       display: none !important;
     }
 
+    .cart-out {
+      position: absolute;
+      display: block;
+      z-index: 5;
+      top: 200%;
+      width: 92vw;
+      max-width: 25em;
+    }
+
     .right {
       .profile {
         height: 2em;
         width: 2em;
         border: 0;
-      }
-      .cart-out {
-        position: fixed;
-        z-index: 5;
-        left: 3.5%;
-        top: 10%;
-        width: 92vw;
       }
     }
   }
