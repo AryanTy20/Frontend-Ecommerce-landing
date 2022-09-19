@@ -119,7 +119,7 @@ const Main: React.FC<IProps> = ({ data }) => {
               >
                 <IconMinus />
               </button>
-              <p>{count}</p>
+              <h5>{count}</h5>
               <button onClick={() => setCount(count + 1)} tabIndex={0}>
                 <IconPlus />
               </button>
