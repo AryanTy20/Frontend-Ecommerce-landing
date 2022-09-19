@@ -197,6 +197,7 @@
 
 @media screen and (max-width: 600px) {
   .main {
+    margin-top: -1px;
     flex-direction: column;
     padding: 0 !important;
     gap: 0 !important;

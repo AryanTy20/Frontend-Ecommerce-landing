@@ -127,99 +127,103 @@
         width: 100%;
       }
     }
+  }
+}
 
-    .cart-out {
-      position: absolute;
-      top: 120%;
-      right: 0;
-      width: 21em;
-      background-color: $White;
-      border-radius: 0.5em;
-      box-shadow: 0 15px 30px 0 rgba($Black, 0.25);
+.cartdisplay {
+  position: relative;
+  width: 100%;
+  .cart-out {
+    position: absolute;
+    top: -1.5em;
+    right: 0;
+    width: 21em;
+    background-color: $White;
+    border-radius: 0.5em;
+    box-shadow: 0 15px 30px 0 rgba($Black, 0.25);
 
-      .title {
-        border-bottom: 1px solid rgba($Grayishblue, 0.5);
-        padding: 1.5em;
+    .title {
+      border-bottom: 1px solid rgba($Grayishblue, 0.5);
+      padding: 1.5em;
+      font-weight: 700;
+    }
+
+    .cart-items {
+      min-height: 12em;
+      height: fit-content;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        color: $Darkgrayishblue;
         font-weight: 700;
+        font-size: 0.9rem;
       }
 
-      .cart-items {
-        min-height: 12em;
-        height: fit-content;
-        display: grid;
+      .item {
+        margin: 0.5em 0;
+        display: flex;
         align-items: center;
-        justify-content: center;
 
-        p {
+        .thumbnail {
+          height: 3.5em;
+          width: 3.5em;
+          border-radius: 0.25em;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .meta {
           color: $Darkgrayishblue;
-          font-weight: 700;
-          font-size: 0.9rem;
-        }
+          padding: 0 0.5em;
 
-        .item {
-          margin: 0.5em 0;
-          display: flex;
-          align-items: center;
-
-          .thumbnail {
-            height: 3.5em;
-            width: 3.5em;
-            border-radius: 0.25em;
-            overflow: hidden;
-
-            img {
-              height: 100%;
-              width: 100%;
-            }
-          }
-
-          .meta {
+          p {
             color: $Darkgrayishblue;
-            padding: 0 0.5em;
-
-            p {
-              color: $Darkgrayishblue;
-              font-weight: 400;
-              margin: 0 0 0.5em 0;
-              b {
-                color: $Veryvarkblue;
-              }
-            }
-          }
-          .remove {
-            margin: 0 0.5em;
-            cursor: pointer;
-
-            svg {
-              transition: fill 0.3s;
-              fill: #69707d;
-            }
-
-            &:hover svg {
-              fill: $Veryvarkblue;
+            font-weight: 400;
+            margin: 0 0 0.5em 0;
+            b {
+              color: $Veryvarkblue;
             }
           }
         }
-
-        .checkout {
-          margin: 0.5em 0;
-          border: 0;
-          outline: 0;
-          padding: 1.2em 8em;
-          font-weight: 700;
-          background-color: $Orange;
-          color: $Paleorange;
-          border-radius: 0.5em;
+        .remove {
+          margin: 0 0.5em;
           cursor: pointer;
-          transition: outline 0.3s;
 
-          &:active {
-            outline: solid $Veryvarkblue 1px;
+          svg {
+            transition: fill 0.3s;
+            fill: #69707d;
           }
 
-          &:focus {
-            outline: solid $Veryvarkblue 1px;
+          &:hover svg {
+            fill: $Veryvarkblue;
           }
+        }
+      }
+
+      .checkout {
+        margin: 0.5em 0;
+        border: 0;
+        outline: 0;
+        padding: 1.2em 8em;
+        font-weight: 700;
+        background-color: $Orange;
+        color: $Paleorange;
+        border-radius: 0.5em;
+        cursor: pointer;
+        transition: outline 0.3s;
+
+        &:active {
+          outline: solid $Veryvarkblue 1px;
+        }
+
+        &:focus {
+          outline: solid $Veryvarkblue 1px;
         }
       }
     }
@@ -247,21 +251,24 @@
       display: none !important;
     }
 
-    .cart-out {
-      position: absolute;
-      display: block;
-      z-index: 5;
-      top: 200%;
-      width: 92vw;
-      max-width: 25em;
-    }
-
     .right {
       .profile {
         height: 2em;
         width: 2em;
         border: 0;
       }
+    }
+  }
+
+  .cartdisplay {
+    display: grid;
+    place-items: center;
+    z-index: 4;
+    height: 1px;
+    .cart-out {
+      position: relative;
+      margin: 2.5em 0 0 0;
+      width: 92vw;
     }
   }
 

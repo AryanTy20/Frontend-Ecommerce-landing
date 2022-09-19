@@ -73,9 +73,9 @@ const Header: React.FC = () => {
           <div className="profile">
             <img src={Avatar} alt="" />
           </div>
-          {showCart && <Cart />}
         </div>
       </div>
+      <div className="cartdisplay">{showCart && <Cart />}</div>
       {showMenu && (
         <motion.nav
           variants={NavVariants}
