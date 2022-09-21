@@ -102,32 +102,30 @@ const Cart: React.FC = () => {
   const cartLength = data?.length;
 
   return (
-    <>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -10,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.3,
-          },
-        }}
-        className="cart-out"
-      >
-        <div className="title">Cart</div>
-        <div className={`cart-items ${cartLength < 1 ? "empty-cart" : ""}`}>
-          {cartLength < 1 ? (
-            <p>Your cart is empty</p>
-          ) : (
-            data?.map((item, i) => <CartItem data={item} id={i} key={i} />)
-          )}
-          {cartLength > 0 && <button className="checkout">Checkout</button>}
-        </div>
-      </motion.div>
-    </>
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: -10,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.3,
+        },
+      }}
+      className="cart-out"
+    >
+      <div className="title">Cart</div>
+      <div className={`cart-items ${cartLength < 1 ? "empty-cart" : ""}`}>
+        {cartLength < 1 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          data?.map((item, i) => <CartItem data={item} id={i} key={i} />)
+        )}
+        {cartLength > 0 && <button className="checkout">Checkout</button>}
+      </div>
+    </motion.div>
   );
 };
 
@@ -154,23 +152,21 @@ const CartItem: React.FC<listProps> = ({ data, id }) => {
   const Total = data?.price * data?.quantity;
 
   return (
-    <>
-      <div className="item">
-        <div className="thumbnail">
-          <img src={data.img} alt="" />
-        </div>
-        <div className="meta">
-          <p>{data?.title}</p>
-          <p>
-            <span>${data?.price} </span>
-            <span> x {data?.quantity} </span> <b>${Total}</b>
-          </p>
-        </div>
-        <div className="remove" onClick={() => dispatch(remove(id))}>
-          <IconDelete />
-        </div>
+    <div className="item">
+      <div className="thumbnail">
+        <img src={data.img} alt="" />
       </div>
-    </>
+      <div className="meta">
+        <p>{data?.title}</p>
+        <p>
+          <span>${data?.price} </span>
+          <span> x {data?.quantity} </span> <b>${Total}</b>
+        </p>
+      </div>
+      <div className="remove" onClick={() => dispatch(remove(id))}>
+        <IconDelete />
+      </div>
+    </div>
   );
 };
 
