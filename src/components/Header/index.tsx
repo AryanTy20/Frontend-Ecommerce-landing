@@ -102,7 +102,7 @@ const Cart: React.FC = () => {
 
   return (
     <>
-      <motion.div
+      <motion.header
         initial={{
           opacity: 0,
           y: -10,
@@ -125,7 +125,7 @@ const Cart: React.FC = () => {
           )}
           {dataLength > 0 && <button className="checkout">Checkout</button>}
         </div>
-      </motion.div>
+      </motion.header>
     </>
   );
 };
