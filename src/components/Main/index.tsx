@@ -69,9 +69,13 @@ const Main: React.FC<IProps> = ({ data }) => {
           >
             <IconPrevious />
           </button>
-          <div className="poster" onClick={() => setShowPopImg(!showPopImg)}>
-            <img src={data?.images[posterIndex].poster} alt="" />
-          </div>
+          <button
+            aria-label="poster"
+            className="poster"
+            onClick={() => setShowPopImg(!showPopImg)}
+          >
+            <img src={data?.images[posterIndex].poster} alt="poster" />
+          </button>
           <button
             aria-label="next image"
             className="control-right"
@@ -88,13 +92,13 @@ const Main: React.FC<IProps> = ({ data }) => {
           </button>
           <div className="thumbnails">
             {data?.images.map((val, i) => (
-              <div
+              <button
                 className={`box ${posterIndex === i ? "active" : ""}`}
                 key={i}
                 onClick={() => setPosterIndex(i)}
               >
-                <img src={val.thumbnail} alt="" />
-              </div>
+                <img src={val.thumbnail} alt={`thumbnail ${i + 1} `} />
+              </button>
             ))}
           </div>
         </div>
