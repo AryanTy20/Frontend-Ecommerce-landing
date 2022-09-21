@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/Hooks";
 import { remove } from "../../features/Cart";
 import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
 import "./style.scss";
 import {
   Logo,
@@ -37,21 +38,21 @@ const item = {
 };
 
 const Header: React.FC = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [showCart, setShowCart] = useState<boolean>(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const cartSize = useAppSelector((state) => state.Cart.length);
   const NavLinks: string[] = ["Collection", "Men", "Women", "About", "Contact"];
 
   return (
     <>
-      <div className="header">
+      <header className="header">
         <div className="left">
           <div className="ham" onClick={() => setShowMenu(!showMenu)}>
             {showMenu ? <IconClose /> : <IconMenu />}
           </div>
-          <a className="logo" href="/">
+          <Link className="logo" to="/">
             <Logo />
-          </a>
+          </Link>
 
           <nav className="menu">
             <a href="#">Collection</a>
@@ -74,7 +75,7 @@ const Header: React.FC = () => {
             <img src={Avatar} alt="" />
           </div>
         </div>
-      </div>
+      </header>
       <div className="cartdisplay">{showCart && <Cart />}</div>
       {showMenu && (
         <motion.nav
@@ -98,11 +99,11 @@ const Header: React.FC = () => {
 
 const Cart: React.FC = () => {
   const data = useAppSelector((state) => state.Cart);
-  const dataLength = data?.length;
+  const cartLength = data?.length;
 
   return (
     <>
-      <motion.header
+      <motion.div
         initial={{
           opacity: 0,
           y: -10,
@@ -117,15 +118,15 @@ const Cart: React.FC = () => {
         className="cart-out"
       >
         <div className="title">Cart</div>
-        <div className={`cart-items ${dataLength < 1 ? "empty-cart" : ""}`}>
-          {dataLength < 1 ? (
+        <div className={`cart-items ${cartLength < 1 ? "empty-cart" : ""}`}>
+          {cartLength < 1 ? (
             <p>Your cart is empty</p>
           ) : (
             data?.map((item, i) => <CartItem data={item} id={i} key={i} />)
           )}
-          {dataLength > 0 && <button className="checkout">Checkout</button>}
+          {cartLength > 0 && <button className="checkout">Checkout</button>}
         </div>
-      </motion.header>
+      </motion.div>
     </>
   );
 };
