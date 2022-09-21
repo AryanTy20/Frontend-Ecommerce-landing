@@ -45,3 +45,8 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+// interface Image {
+//   poster: string;
+//   thumbnail: string;
+// }

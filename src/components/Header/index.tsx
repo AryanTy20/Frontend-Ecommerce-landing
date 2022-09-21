@@ -49,9 +49,9 @@ const Header: React.FC = () => {
           <div className="ham" onClick={() => setShowMenu(!showMenu)}>
             {showMenu ? <IconClose /> : <IconMenu />}
           </div>
-          <div className="logo">
+          <a className="logo" href="/">
             <Logo />
-          </div>
+          </a>
 
           <nav className="menu">
             <a href="#">Collection</a>
@@ -98,6 +98,7 @@ const Header: React.FC = () => {
 
 const Cart: React.FC = () => {
   const data = useAppSelector((state) => state.Cart);
+  const dataLength = data?.length;
 
   return (
     <>
@@ -116,11 +117,13 @@ const Cart: React.FC = () => {
         className="cart-out"
       >
         <div className="title">Cart</div>
-        <div className={`cart-items ${data?.length < 1 ? "empty-cart" : ""}`}>
-          {data?.length < 1 && <p>Your cart is empty</p>}
-          {data?.length > 0 &&
-            data?.map((item, i) => <CartItem data={item} id={i} key={i} />)}
-          {data?.length > 0 && <button className="checkout">Checkout</button>}
+        <div className={`cart-items ${dataLength < 1 ? "empty-cart" : ""}`}>
+          {dataLength < 1 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            data?.map((item, i) => <CartItem data={item} id={i} key={i} />)
+          )}
+          {dataLength > 0 && <button className="checkout">Checkout</button>}
         </div>
       </motion.div>
     </>
