@@ -69,8 +69,11 @@
         fill: #69707d;
         transition: fill 0.3s;
       }
-      &:hover,
+
       &:focus svg {
+        fill: $Veryvarkblue;
+      }
+      &:hover svg {
         fill: $Veryvarkblue;
       }
 
