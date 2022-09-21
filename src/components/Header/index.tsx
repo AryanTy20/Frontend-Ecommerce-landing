@@ -50,7 +50,7 @@ const Header: React.FC = () => {
           <div className="ham" onClick={() => setShowMenu(!showMenu)}>
             {showMenu ? <IconClose /> : <IconMenu />}
           </div>
-          <Link className="logo" to="/" aria-label="logo">
+          <Link className="logo" to="/" aria-label="link to home">
             <Logo />
           </Link>
 
