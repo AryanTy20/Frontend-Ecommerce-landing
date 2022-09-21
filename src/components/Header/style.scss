@@ -63,14 +63,14 @@
       position: relative;
       background-color: transparent;
       border: 0;
-
+      outline: none;
       svg {
         margin-top: 0.1em;
         fill: #69707d;
         transition: fill 0.3s;
-        outline: none;
       }
-      &:hover svg {
+      &:hover,
+      &:focus svg {
         fill: $Veryvarkblue;
       }
 
