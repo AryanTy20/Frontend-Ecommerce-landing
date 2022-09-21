@@ -28,7 +28,7 @@
         &::after {
           position: absolute;
           content: "";
-          bottom: -245%;
+          bottom: -190%;
           left: 0;
           height: 0.25em;
           width: 100%;
@@ -61,11 +61,14 @@
       margin-right: 2em;
       cursor: pointer;
       position: relative;
+      background-color: transparent;
+      border: 0;
 
       svg {
         margin-top: 0.1em;
         fill: #69707d;
         transition: fill 0.3s;
+        outline: none;
       }
       &:hover svg {
         fill: $Veryvarkblue;
