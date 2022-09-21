@@ -148,6 +148,10 @@
           display: grid;
           place-items: center;
 
+          &:focus {
+            outline: dashed 1px;
+          }
+
           svg use {
             transition: fill 0.3s;
             fill: $Orange;
