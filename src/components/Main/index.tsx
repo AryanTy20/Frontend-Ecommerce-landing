@@ -53,9 +53,10 @@ const Main: React.FC<IProps> = ({ data }) => {
 
   return (
     <>
-      <div className="main">
+      <main className="main">
         <div className="image">
-          <div
+          <button
+            aria-label="previous image"
             className="control-left"
             onClick={() =>
               data &&
@@ -67,11 +68,12 @@ const Main: React.FC<IProps> = ({ data }) => {
             }
           >
             <IconPrevious />
-          </div>
+          </button>
           <div className="poster" onClick={() => setShowPopImg(!showPopImg)}>
             <img src={data?.images[posterIndex].poster} alt="" />
           </div>
-          <div
+          <button
+            aria-label="next image"
             className="control-right"
             onClick={() =>
               data &&
@@ -83,7 +85,7 @@ const Main: React.FC<IProps> = ({ data }) => {
             }
           >
             <IconNext />
-          </div>
+          </button>
           <div className="thumbnails">
             {data?.images.map((val, i) => (
               <div
@@ -116,23 +118,30 @@ const Main: React.FC<IProps> = ({ data }) => {
           <div className="controls">
             <div className="quantity-btns">
               <button
+                aria-label="item decrement"
                 onClick={() => count > 1 && setCount(count - 1)}
-                tabIndex={0}
               >
                 <IconMinus />
               </button>
               <h5>{count}</h5>
-              <button onClick={() => setCount(count + 1)} tabIndex={0}>
+              <button
+                aria-label="item increment"
+                onClick={() => setCount(count + 1)}
+              >
                 <IconPlus />
               </button>
             </div>
-            <button tabIndex={0} className="addcart-btn" onClick={addToCart}>
+            <button
+              aria-label="add to cart"
+              className="addcart-btn"
+              onClick={addToCart}
+            >
               <IconCart />
               Add to cart
             </button>
           </div>
         </div>
-      </div>
+      </main>
       {showPopImg && data?.images && (
         <PopImg
           images={data.images}
