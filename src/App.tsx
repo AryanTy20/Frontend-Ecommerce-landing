@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Header, Main, Footer } from "./components";
+
 const App: React.FC = () => {
   const Data = {
     id: 1,
@@ -39,8 +40,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-// interface Image {
-//   poster: string;
-//   thumbnail: string;
-// }

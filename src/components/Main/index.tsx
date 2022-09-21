@@ -13,6 +13,11 @@ import {
   IconPrevious,
 } from "../../assets";
 
+export interface Images {
+  poster: string;
+  thumbnail: string;
+}
+
 interface IProps {
   data: {
     id: number;
@@ -21,10 +26,7 @@ interface IProps {
     desc: string;
     discount: number;
     price: number;
-    images: {
-      poster: string;
-      thumbnail: string;
-    }[];
+    images: Images[];
   } | null;
 }
 
