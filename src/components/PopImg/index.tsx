@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IconClose, IconPrevious, IconNext } from "../../assets";
-
 import { imgNext, imgPrev } from "../../utils/imageControl";
 import { motion } from "framer-motion";
 import "./style.scss";
+import { Images } from "../Main";
 
 interface IProp {
-  images: {
-    poster: string;
-    thumbnail: string;
-  }[];
+  images: Images[];
   closePop: React.Dispatch<React.SetStateAction<boolean>>;
   openedImgId: number;
 }
