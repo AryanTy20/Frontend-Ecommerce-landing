@@ -31,15 +31,9 @@ const App: React.FC = () => {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <Main data={Data} />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Header />
+      <Main data={Data} />
+      <Footer />
     </>
   );
 };
