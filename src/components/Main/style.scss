@@ -79,18 +79,14 @@
   .data {
     p {
       color: $Darkgrayishblue;
-
-      &:first-child {
-        color: $Orange;
-        font-weight: 400;
-        font-size: 1.2rem;
-        margin: 1em 0;
-        text-transform: uppercase;
-      }
-
-      &:last-of-type {
-        margin: 2em 0;
-      }
+      margin: 2em 0;
+    }
+    h3 {
+      color: $Orange;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin: 1em 0;
+      text-transform: uppercase;
     }
 
     h2 {
