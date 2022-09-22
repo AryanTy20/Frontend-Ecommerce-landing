@@ -25,25 +25,25 @@ const PopImg: React.FC<IProp> = ({ images, closePop, openedImgId }) => {
       className="pop-img"
     >
       <div className="container">
-        <div className="close" onClick={() => closePop((prev) => !prev)}>
+        <button className="close" onClick={() => closePop((prev) => !prev)}>
           <IconClose />
-        </div>
+        </button>
         <div className="image">
-          <div
+          <button
             className="control-left"
             onClick={() => imgPrev({ images, imgIndex, setImgIndex })}
           >
             <IconPrevious />
-          </div>
+          </button>
           <div className="poster">
-            <img src={images[imgIndex].poster} alt="" />
+            <img src={images[imgIndex].poster} alt="poster" />
           </div>
-          <div
+          <button
             className="control-right"
             onClick={() => imgNext({ images, imgIndex, setImgIndex })}
           >
             <IconNext />
-          </div>
+          </button>
           <div className="thumbnails">
             {images?.map((val, i) => (
               <div
