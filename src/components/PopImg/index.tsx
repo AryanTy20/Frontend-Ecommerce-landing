@@ -25,11 +25,16 @@ const PopImg: React.FC<IProp> = ({ images, closePop, openedImgId }) => {
       className="pop-img"
     >
       <div className="container">
-        <button className="close" onClick={() => closePop((prev) => !prev)}>
+        <button
+          aria-label="close"
+          className="close"
+          onClick={() => closePop((prev) => !prev)}
+        >
           <IconClose />
         </button>
         <div className="image">
           <button
+            aria-label="previous image"
             className="control-left"
             onClick={() => imgPrev({ images, imgIndex, setImgIndex })}
           >
@@ -39,6 +44,7 @@ const PopImg: React.FC<IProp> = ({ images, closePop, openedImgId }) => {
             <img src={images[imgIndex].poster} alt="poster" />
           </div>
           <button
+            aria-label="next image"
             className="control-right"
             onClick={() => imgNext({ images, imgIndex, setImgIndex })}
           >
@@ -46,13 +52,13 @@ const PopImg: React.FC<IProp> = ({ images, closePop, openedImgId }) => {
           </button>
           <div className="thumbnails">
             {images?.map((val, i) => (
-              <div
+              <button
                 className={`box ${imgIndex === i ? "active" : ""}`}
                 key={i}
                 onClick={() => setImgIndex(i)}
               >
                 <img src={val.thumbnail} alt="" />
-              </div>
+              </button>
             ))}
           </div>
         </div>
