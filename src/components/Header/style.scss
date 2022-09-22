@@ -205,6 +205,8 @@
         .remove {
           margin: 0 0.5em;
           cursor: pointer;
+          background-color: transparent;
+          border: 0;
 
           svg {
             transition: fill 0.3s;
@@ -220,8 +222,7 @@
       .checkout {
         margin: 0.5em 0;
         border: 0;
-        outline: 0;
-        padding: 1.2em 8em;
+        padding: 1em;
         font-weight: 700;
         background-color: $Orange;
         color: $Paleorange;
@@ -230,10 +231,6 @@
         transition: outline 0.3s;
 
         &:active {
-          outline: solid $Veryvarkblue 1px;
-        }
-
-        &:focus {
           outline: solid $Veryvarkblue 1px;
         }
       }
