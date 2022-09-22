@@ -1,10 +1,8 @@
+import { Images } from "../components/Main";
+
 type ImgControlProps = {
   imgIndex: number;
-  images:
-    | {
-        poster: string;
-        thumbnail: string;
-      }[];
+  images: Images[];
   setImgIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
