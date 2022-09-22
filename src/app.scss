@@ -54,7 +54,13 @@ select {
 }
 
 :focus {
-  outline: dashed 1px black;
+  outline: dashed 1px lightblue;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: dashed 1px lightblue;
 }
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
