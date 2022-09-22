@@ -53,11 +53,12 @@ const PopImg: React.FC<IProp> = ({ images, closePop, openedImgId }) => {
           <div className="thumbnails">
             {images?.map((val, i) => (
               <button
+                aria-label={`thumbnail${i}`}
                 className={`box ${imgIndex === i ? "active" : ""}`}
                 key={i}
                 onClick={() => setImgIndex(i)}
               >
-                <img src={val.thumbnail} alt="" />
+                <img src={val.thumbnail} alt="thumbnail" />
               </button>
             ))}
           </div>
