@@ -54,7 +54,7 @@ const Main: React.FC<IProps> = ({ data }) => {
   return (
     <>
       <main className="main">
-        <div className="image">
+        <article className="image">
           <button
             aria-label="previous image"
             className="control-left"
@@ -101,8 +101,8 @@ const Main: React.FC<IProps> = ({ data }) => {
               </button>
             ))}
           </div>
-        </div>
-        <div className="data">
+        </article>
+        <article className="data">
           <p>{data?.company}</p>
           <h2>{data?.product}</h2>
           <p>{data?.desc}</p>
@@ -144,7 +144,7 @@ const Main: React.FC<IProps> = ({ data }) => {
               Add to cart
             </button>
           </div>
-        </div>
+        </article>
       </main>
       {showPopImg && data?.images && (
         <PopImg
