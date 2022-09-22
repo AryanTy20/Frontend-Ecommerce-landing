@@ -141,15 +141,10 @@
 
         button {
           border: 0;
-          outline: 0;
           background-color: transparent;
           cursor: pointer;
           display: grid;
           place-items: center;
-
-          &:focus {
-            outline: dashed 1px;
-          }
 
           svg use {
             transition: fill 0.3s;
@@ -158,15 +153,11 @@
           &:hover svg use {
             fill: $Veryvarkblue;
           }
-          &:focus svg use {
-            fill: $Veryvarkblue;
-          }
         }
       }
       .addcart-btn {
         margin: 0.5em 0;
         border: 0;
-        outline: 0;
         width: 100%;
         padding: 1.2em;
         font-weight: 700;
@@ -187,10 +178,6 @@
         }
 
         &:active {
-          outline: solid $Veryvarkblue 1px;
-        }
-
-        &:focus {
           outline: solid $Veryvarkblue 1px;
         }
       }
