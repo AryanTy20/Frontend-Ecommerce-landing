@@ -72,8 +72,8 @@ const Header: React.FC = () => {
           >
             <IconCart />
           </button>
-          <div className="profile">
-            <img src={Avatar} alt="" />
+          <div aria-label="profile picture" className="profile">
+            <img src={Avatar} alt="profile picture" />
           </div>
         </div>
       </header>
