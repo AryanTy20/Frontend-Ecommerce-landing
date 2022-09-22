@@ -17,6 +17,8 @@
     .close {
       position: absolute;
       cursor: pointer;
+      background-color: transparent;
+      border: 0;
       top: 1%;
       left: 96%;
       svg path {
@@ -40,6 +42,7 @@
         width: 2em;
         border-radius: 50%;
         background-color: white;
+        border: 0;
         display: grid;
         place-items: center;
         svg path {
@@ -85,6 +88,7 @@
           position: relative;
           isolation: isolate;
           z-index: 1;
+          border: 0;
 
           img {
             height: 100%;
