@@ -1,7 +1,6 @@
 @use "../../colors" as *;
 
 .main {
-  // height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +9,7 @@
 
   .image {
     margin: 3em 0;
-    width: 50%;
+    width: 45%;
     height: fit-content;
 
     .control-left,
@@ -18,18 +17,13 @@
       display: none;
     }
     .poster {
-      height: 25em;
-      width: 25em;
       border-radius: 0.5em;
       overflow: hidden;
       cursor: pointer;
       border: 0;
-      img {
-        height: 100%;
-        width: 100%;
-      }
     }
     .thumbnails {
+      width: 100%;
       margin: 2em 0;
       display: flex;
       align-items: center;
@@ -77,6 +71,7 @@
   }
 
   .data {
+    width: 50%;
     p {
       color: $Darkgrayishblue;
       margin: 2em 0;
@@ -132,6 +127,7 @@
         align-items: center;
         justify-content: space-between;
         width: 50%;
+        min-width: fit-content;
         height: 3em;
         padding: 0.8em;
         margin-right: 2em;
@@ -140,6 +136,7 @@
         background-color: $Lightgrayishblue;
 
         button {
+          margin: 1em;
           border: 0;
           background-color: transparent;
           cursor: pointer;
@@ -159,6 +156,7 @@
         margin: 0.5em 0;
         border: 0;
         width: 100%;
+        min-width: fit-content;
         padding: 1em;
         font-weight: 700;
         background-color: $Orange;
@@ -185,7 +183,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .main {
     margin-top: -1px;
     flex-direction: column;
@@ -195,7 +193,7 @@
     .image {
       margin: 0 !important;
       width: 100vw !important;
-      height: 20em;
+      height: fit-content;
       position: relative;
       isolation: isolate;
 
@@ -211,6 +209,7 @@
         display: grid;
         place-items: center;
         cursor: pointer;
+        border: none;
 
         svg {
           scale: 0.9;
@@ -291,7 +290,58 @@
         .addcart-btn {
           margin-top: 1em;
           width: 100%;
-          padding: 1.5em !important;
+          padding: 1em !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1100px) {
+  body {
+    padding: 1em !important;
+  }
+  .main {
+    padding: 0;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    .image {
+      // margin: 2em 0;
+      .thumbnails {
+        .box {
+          height: calc(3em + 2vw);
+          width: calc(3em + 2vw);
+        }
+      }
+    }
+
+    .data {
+      p {
+        margin: 1em 0;
+      }
+      h3 {
+        margin: 2em 0 0 0;
+      }
+
+      h2 {
+        font-size: 2.3rem;
+      }
+
+      .price {
+        margin: 1em 0;
+
+        .discount-active {
+          text-decoration: line-through;
+          color: $Grayishblue;
+        }
+
+        .discount {
+          width: 100%;
+
+          h3 {
+            margin: 0;
+          }
         }
       }
     }
