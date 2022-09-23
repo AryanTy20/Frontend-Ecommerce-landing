@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, current } from "@reduxjs/toolkit";
 
 type initial = {
   id: number;
@@ -18,17 +18,25 @@ const Cart = createSlice({
   reducers: {
     add: (state, action: PayloadAction<initial>) => {
       const { id, img, price, quantity, title } = action.payload;
-      state.push({
-        id,
-        img,
-        price,
-        quantity,
-        title,
-        total: quantity * price,
-      });
+      const exist = state.findIndex((el) => el.id == id);
+      if (exist >= 0) {
+        const total = quantity * price;
+        state[exist].quantity = quantity;
+        state[exist].total = total;
+      } else {
+        state.push({
+          id,
+          img,
+          price,
+          quantity,
+          title,
+          total: quantity * price,
+        });
+      }
     },
     remove: (state, action: PayloadAction<id>) => {
-      state.splice(action.payload, 1);
+      state.filter((item) => item.id !== action.payload);
+      // if (exist >= 0) state.splice(exist, 1);
     },
   },
 });
