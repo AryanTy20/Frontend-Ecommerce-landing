@@ -31,9 +31,9 @@ interface IProps {
 }
 
 const Main: React.FC<IProps> = ({ data }) => {
-  const [count, setCount] = useState<number>(1);
-  const [showPopImg, setShowPopImg] = useState<boolean>(false);
-  const [posterIndex, setPosterIndex] = useState<number>(0);
+  const [count, setCount] = useState(1);
+  const [showPopImg, setShowPopImg] = useState(false);
+  const [posterIndex, setPosterIndex] = useState(0);
   const dispatch = useAppDispatch();
   const discountPrice: number | undefined =
     data?.discount && (data.price * data.discount) / 100;
