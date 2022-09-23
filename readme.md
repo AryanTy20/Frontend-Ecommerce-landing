@@ -47,6 +47,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Typescript
+- @redux-toolkit
 - desktop-first workflow
 - [React](https://reactjs.org/) - JS library
 - [ReactViteTS](https://vitejs.dev)
