@@ -122,7 +122,7 @@ const Cart: React.FC = () => {
         {cartLength < 1 ? (
           <p>Your cart is empty</p>
         ) : (
-          data?.map((item, i) => <CartItem data={item} id={i} key={i} />)
+          data?.map((item, i) => <CartItem data={item} key={i} />)
         )}
         {cartLength > 0 && (
           <button className="checkout" aria-label="checkout">
@@ -136,15 +136,15 @@ const Cart: React.FC = () => {
 
 interface listProps {
   data: {
+    id: number;
     img: string;
     price: number;
     quantity: number;
     title: string;
   };
-  id: number;
 }
 
-const CartItem: React.FC<listProps> = ({ data, id }) => {
+const CartItem: React.FC<listProps> = ({ data }) => {
   // const Price: string = new Intl.NumberFormat("us", {
   //   style: "currency",
   //   currency: "USD",
@@ -171,7 +171,7 @@ const CartItem: React.FC<listProps> = ({ data, id }) => {
       <button
         aria-label="remove item from cart"
         className="remove"
-        onClick={() => dispatch(remove(id))}
+        onClick={() => dispatch(remove(data.id))}
       >
         <IconDelete />
       </button>

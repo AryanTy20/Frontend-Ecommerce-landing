@@ -35,7 +35,7 @@ const Cart = createSlice({
       }
     },
     remove: (state, action: PayloadAction<id>) => {
-      state.filter((item) => item.id !== action.payload);
+      return state.filter((item) => item.id !== action.payload);
       // if (exist >= 0) state.splice(exist, 1);
     },
   },
