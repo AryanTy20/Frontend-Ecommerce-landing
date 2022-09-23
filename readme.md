@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](/screenshot-desktop.png)
-![](/screenshot-mobile.png)
+![public](/screenshot-desktop.png)
+![public](/screenshot-mobile.png)
 
 ### Links
 
@@ -49,7 +49,7 @@ Users should be able to:
 - Typescript
 - desktop-first workflow
 - [React](https://reactjs.org/) - JS library
-- [ViteTS](https://vitejs.dev)
+- [ReactViteTS](https://vitejs.dev)
 
 ### What I learned
 
@@ -61,10 +61,10 @@ This project can be used in my future upcomming e-commerce project
 
 ### Useful resources
 
-- [Example resource 1](https://youtube.com/Codevolution) - This helped me for for learning typescript in react.
-- [Example resource 2](https://developer.mozilla.org/en-US/) - for better semantic and accessibilty documentation
+- [Codevolution youtube](https://youtube.com/Codevolution) - This helped me for for learning typescript in react.
+- [Mozilla MDN docs](https://developer.mozilla.org/en-US/) - for better semantic and accessibilty documentation
 
 ## Author
 
 - github - [Aryan Tirkey](https://github.com/AryanTy20)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/AryanTy20)
+- Frontend Mentor - [@AryanTy20](https://www.frontendmentor.io/profile/AryanTy20)
