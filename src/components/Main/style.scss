@@ -72,15 +72,16 @@
 
   .data {
     width: 50%;
+    height: fit-content;
     p {
       color: $Darkgrayishblue;
       margin: 2em 0;
     }
-    h3 {
+    h1 {
       color: $Orange;
       font-weight: 700;
       font-size: 0.9rem;
-      margin: 1em 0;
+      margin: 0 0 1em 0;
       text-transform: uppercase;
     }
 
@@ -320,7 +321,7 @@
       p {
         margin: 1em 0;
       }
-      h3 {
+      h1 {
         margin: 2em 0 0 0;
       }
 

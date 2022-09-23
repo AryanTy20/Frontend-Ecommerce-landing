@@ -103,7 +103,7 @@ const Main: React.FC<IProps> = ({ data }) => {
           </div>
         </article>
         <article className="data">
-          <h3>{data?.company}</h3>
+          <h1>{data?.company}</h1>
           <h2>{data?.product}</h2>
           <p>{data?.desc}</p>
           <div className="price">
